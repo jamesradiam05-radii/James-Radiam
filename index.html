@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="James Developer and Designer - websites, software, graphics and posters.">
+<title>James Developer and Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#07172f;--blue:#087bff;--pale:#edf5ff;--white:#fff;--ink:#10213d}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{font-family:Poppins,Arial,sans-serif;color:var(--ink);line-height:1.7;background:#fff}
+a{color:inherit}
+header{position:sticky;top:0;z-index:10;background:rgba(7,23,47,.97);color:#fff;padding:14px 6%;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;box-shadow:0 4px 18px #06132935}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo{width:50px;height:50px;border:2px solid #1689ff;border-radius:50%;display:grid;place-items:center;font-size:22px;font-weight:800;color:#fff}
+.brand strong{display:block;font-size:16px;line-height:1.25}
+.brand span{color:#48a6ff}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:14px;font-weight:600;color:#fff}
+nav a:hover{color:#48a6ff}
+.btn{display:inline-block;border:0;border-radius:30px;padding:12px 22px;background:var(--blue);color:#fff;text-decoration:none;font-weight:700;transition:.2s}
+.btn:hover{background:#005bc8;transform:translateY(-2px)}
+.hero{min-height:510px;padding:65px 7%;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px;color:#fff;background:radial-gradient(circle at 75% 45%,#0755a9 0,#0b2b59 34%,#061329 76%)}
+.eyebrow{color:#58adff;font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px}
+.hero h1{font-size:clamp(38px,6vw,64px);line-height:1.12;margin:12px 0}
+.hero h1 span{color:#38a0ff}
+.hero p{color:#e0edff;margin:12px 0 24px;max-width:600px}
+.hero-photo{width:min(100%,360px);height:390px;object-fit:cover;object-position:center 20%;border:4px solid #1689ff;border-radius:24px;box-shadow:0 20px 55px #0007;justify-self:center}
+section{padding:72px 7%}
+.section-heading{text-align:center;margin-bottom:38px}
+.section-heading .eyebrow{color:var(--blue)}
+.section-heading h2{font-size:clamp(27px,4vw,36px);color:var(--navy);line-height:1.25;margin:7px 0}
+.about{display:grid;grid-template-columns:.75fr 1.25fr;align-items:center;gap:42px}
+.about-photo{width:100%;max-width:330px;height:370px;object-fit:cover;object-position:center 20%;border-radius:20px;border:6px solid var(--pale);box-shadow:0 12px 35px #07172f20}
+.about-copy h2{font-size:30px;line-height:1.25;margin:8px 0 16px}
+.about-copy h2 span{color:var(--blue)}
+.about-copy p{margin:10px 0}
+.discount{display:inline-block;background:var(--blue);color:white;padding:8px 15px;border-radius:9px;font-weight:700;margin:10px 0 18px}
+.services{background:var(--navy);color:#fff}
+.services .section-heading h2{color:#fff}
+.service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.service-card{background:#fff;color:var(--ink);padding:26px;border-radius:16px;border-bottom:4px solid var(--blue);box-shadow:0 10px 25px #0002}
+.service-icon{font-size:34px}
+.service-card h3{font-size:20px;color:#075dc5;margin:8px 0}
+.service-card p{font-size:14px;margin-bottom:18px}
+.details{background:#f7faff}
+.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.detail{background:#fff;border-left:5px solid var(--blue);border-radius:12px;padding:24px;box-shadow:0 8px 25px #07172f0c}
+.detail h3{color:#075dc5;margin-bottom:8px}
+.promo{margin:60px 7%;padding:38px 22px;border-radius:20px;text-align:center;color:#fff;background:linear-gradient(120deg,#0753b9,#078cff)}
+.promo h2{font-size:clamp(25px,4vw,34px)}
+.promo p{margin:10px 0 20px}
+.promo .btn{background:#fff;color:#0753b9}
+.contact-card{max-width:700px;margin:auto;background:var(--pale);padding:30px;border-radius:18px}
+.contact-card p{margin:13px 0;overflow-wrap:anywhere}
+.contact-card a{color:#075dc5;text-decoration:none;font-weight:600}
+footer{background:var(--navy);color:#fff;text-align:center;padding:42px 7%}
+footer h2{font-family:"Playfair Display",serif;font-size:clamp(25px,4vw,34px);margin-bottom:10px}
+footer p{color:#dceaff;font-size:14px}
+footer .copyright{margin-top:22px;font-size:12px;color:#aebed5}
+@media(max-width:720px){
+ header{justify-content:center}
+ nav{justify-content:center;gap:13px}
+ .hero{grid-template-columns:1fr;text-align:center;padding:55px 6%}
+ .hero p{margin-left:auto;margin-right:auto}
+ .hero-photo{height:320px;width:min(80%,300px)}
+ .about{grid-template-columns:1fr;text-align:center}
+ .about-photo{height:330px;max-width:280px;justify-self:center;margin:auto}
+ .service-grid,.detail-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#home" aria-label="James Developer and Designer home">
+    <div class="logo">JD</div>
+    <div><strong>James Developer<br><span>and Designer</span></strong></div>
+  </a>
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<div class="hero" id="home">
+  <div>
+    <div class="eyebrow">Build • Design • Grow</div>
+    <h1>James <span>Developer</span><br>and Designer</h1>
+    <p>Your trusted partner for web development, graphic design and digital solutions. Your ideas, our expertise!</p>
+    <a class="btn" href="#services">Explore my services →</a>
+  </div>
+  <img class="hero-photo" src="profile.png" alt="Portrait of James">
+</div>
+
+<section class="about" id="about">
+  <img class="about-photo" src="profile.png" alt="James, developer and designer">
+  <div class="about-copy">
+    <div class="eyebrow">About me</div>
+    <h2>Welcome to <span>James Developer and Designer!</span></h2>
+    <p>My name is Yaikoob (James), and I am Ethiopian, living in Southern Ethiopia. As a web developer and designer, I am here to provide you with reliable, comprehensive services.</p>
+    <p>You can come to us and order whatever you need at a 35% discount. From us to you, and you with us!</p>
+    <div class="discount">Special offer: 35% discount</div><br>
+    <a class="btn" href="#contact">Let's work together →</a>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-heading"><div class="eyebrow">What I do</div><h2>My Services</h2><p>Creative and practical digital services for your ideas.</p></div>
+  <div class="service-grid">
+    <article class="service-card"><div class="service-icon">🌐</div><h3>Business Promotion Websites</h3><p>Modern websites that showcase your products and services, promote your business and help customers find you online.</p><a class="btn" href="#business-sites">Learn more</a></article>
+    <article class="service-card"><div class="service-icon">🏢</div><h3>Websites for Companies</h3><p>Professional company websites with clear information about your organization, team, projects and contact details.</p><a class="btn" href="#company-sites">Learn more</a></article>
+    <article class="service-card"><div class="service-icon">💻</div><h3>Software</h3><p>Useful software solutions designed around your needs to help organize information and make everyday tasks easier.</p><a class="btn" href="#software">Learn more</a></article>
+    <article class="service-card"><div class="service-icon">🎨</div><h3>Graphics and Posters</h3><p>Attractive posters and graphics for birthdays, marriages, shops, advertisements and special occasions.</p><a class="btn" href="#graphics">Learn more</a></article>
+  </div>
+</section>
+
+<section class="details">
+  <div class="section-heading"><div class="eyebrow">Service details</div><h2>How I Can Help</h2></div>
+  <div class="detail-grid">
+    <article class="detail" id="business-sites"><h3>01. Business promotion websites</h3><p>Give your business an online presence with a website that introduces your brand, displays your products and explains how customers can reach you.</p></article>
+    <article class="detail" id="company-sites"><h3>02. Websites for companies</h3><p>Present your company professionally with pages for your history, services, team, projects and contact information.</p></article>
+    <article class="detail" id="software"><h3>03. Software</h3><p>Plan and create practical software to support business activities, organize records and simplify everyday work.</p></article>
+    <article class="detail" id="graphics"><h3>04. Graphics and posters</h3><p>Celebrate important moments and promote your shop with custom birthday, marriage, business and advertising designs.</p></article>
+  </div>
+</section>
+
+<div class="promo">
+  <h2>Special Offer — 35% OFF!</h2>
+  <p>Get in touch to discuss your project and the services you need.</p>
+  <a class="btn" href="#contact">Order a service →</a>
+</div>
+
+<section id="contact">
+  <div class="section-heading"><div class="eyebrow">Get in touch</div><h2>Contact James</h2><p>Have a project or a question? I'd be happy to hear from you.</p></div>
+  <div class="contact-card">
+    <p>📧 Email: <a href="mailto:jamesradiam05@gmail.com">jamesradiam05@gmail.com</a></p>
+    <p>📞 Phone: <a href="tel:+251904954096">+251904954096</a></p>
+    <p>📞 Alternative: <a href="tel:+251701160496">+251701160496</a></p>
+    <p>✈️ Telegram: <a href="https://t.me/JamesRadiam" target="_blank" rel="noopener">@JamesRadiam</a></p>
+    <a class="btn" href="https://t.me/JamesRadiam" target="_blank" rel="noopener">Message me on Telegram</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <h2>Thank You for Your Trust!</h2>
+  <p>Thank you for visiting James Developer and Designer. I appreciate your interest and support, and look forward to bringing your ideas to life.</p>
+  <p class="copyright">© 2026 James Developer and Designer. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
